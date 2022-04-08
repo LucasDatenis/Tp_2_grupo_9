@@ -139,7 +139,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="cAeropuerto.cpp" />
+    <ClCompile Include="cAvion.cpp" />
+    <ClCompile Include="cPasajero.cpp" />
+    <ClCompile Include="cVuelo.cpp" />
     <ClCompile Include="Tp_2.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cAeropuerto.h" />
+    <ClInclude Include="cAvion.h" />
+    <ClInclude Include="cPasajero.h" />
+    <ClInclude Include="cVuelo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
