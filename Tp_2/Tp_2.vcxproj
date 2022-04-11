@@ -150,6 +150,7 @@
     <ClInclude Include="cAvion.h" />
     <ClInclude Include="cPasajero.h" />
     <ClInclude Include="cVuelo.h" />
+    <ClInclude Include="Fechas.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
