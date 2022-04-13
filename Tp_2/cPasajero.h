@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <string>
+#include <cstring>
 #include <cstdio>
 #include "Fechas.h"
 
@@ -17,16 +18,17 @@ class Pasajero {
 	unsigned int nrovuelo;
 	string asiento;
 	float* equipaje;
-	int cant_equipaje = 0;
+	int equipaje_total;
 	//time_t fecha;
 public:
-	Pasajero(string _nombre, string _apellido, long int dni, int cant_equipaje = MAX);
+	Pasajero(string _nombre, string _apellido, long int dni, unsigned int _nrovuelo);
 	//Pasajero(unsigned int nrovuelo, time_t fecha);
 	~Pasajero();
 
 	bool verifico_letas(string palabra);
-	bool verifico_numeros(double numero);
+	bool verifico_numeros(long int entero);
 
 	bool agregarequipaje(float peso);
 	void imprimir_pasajero();
+	void imprimir_equipaje();
 };
