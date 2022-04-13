@@ -10,6 +10,8 @@ int main()
 {
     Pasajero* pasajero1 = new Pasajero("Lucas", "Datenis");
 
+    pasajero1->imprimir_pasajero();
+
     system("pause");
     return 0;
 }
