@@ -18,10 +18,11 @@ class Pasajero {
 	unsigned int nrovuelo;
 	string asiento;
 	float* equipaje;
-	int equipaje_total;
-	//time_t fecha;
+	int equipaje_lista;
+	int equipaje_actual;
+	float peso_total;	//time_t fecha;
 public:
-	Pasajero(string _nombre, string _apellido, long int dni, unsigned int _nrovuelo);
+	Pasajero(string _nombre, string _apellido, long int dni, unsigned int _nrovuelo, int equipaje_lista);
 	//Pasajero(unsigned int nrovuelo, time_t fecha);
 	~Pasajero();
 
@@ -29,6 +30,11 @@ public:
 	bool verifico_numeros(long int entero);
 
 	bool agregarequipaje(float peso);
+
+	string getnombre(){ return nombre; }
+	string getapellido() { return apellido;	}
+	int getelista() { return equipaje_lista; }
+
 	void imprimir_pasajero();
 	void imprimir_equipaje();
 };

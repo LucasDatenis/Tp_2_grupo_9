@@ -2,7 +2,7 @@
 
 
 //Constructor de los objetos Pasajeros
-Pasajero::Pasajero(string _nombre, string _apellido, long int dni, unsigned int _nrovuelo)
+Pasajero::Pasajero(string _nombre, string _apellido, long int dni, unsigned int _nrovuelo, int equipaje_lista)
 {
 	bool cont_pal = true, cont_num = true;
 	//Hacemos la verificacion de que el nombre y apellido sean correctos
@@ -44,10 +44,25 @@ Pasajero::Pasajero(string _nombre, string _apellido, long int dni, unsigned int 
 	else
 		this->nrovuelo = _nrovuelo;
 
-	equipaje = new float[50];
-	for (int i = 0; i < 50; i++)
+
+	//Verificamos que el DNI sea correcto
+	cont_num = verifico_numeros(equipaje_lista);
+	//Si se recibe un false quiere decir que el DNI nop presenta en algun lugar un numero o es negativo
+	if (cont_num == false)
+	{
+		cout << "La cantridad de valijas del pasajero no es un numero" << endl;
+		exit(1);
+	}
+	else
+		this->equipaje_lista = equipaje_lista;
+
+
+
+	equipaje = new float[equipaje_lista];
+	for (int i = 0; i < equipaje_lista; i++)
 		equipaje[i] = NULL;
-	equipaje_total = 0;
+	equipaje_actual = 0;
+	peso_total = 0;
 }
 //Destructor de los objetos
 Pasajero::~Pasajero()
@@ -57,15 +72,14 @@ Pasajero::~Pasajero()
 
 
 bool Pasajero::agregarequipaje(float peso) {
-	float peso_total = 0;
-	equipaje_total++;
-	for (int i = 0; i < equipaje_total; i++)
+	equipaje_actual++;
+	for (int i = 0; i < equipaje_actual; i++)
 	{
 		if(equipaje[i] == NULL)
 			equipaje[i] = peso;
 		else
 			i++;
-		peso_total = +peso;
+		peso_total = peso_total + peso;
 	}
 	if (peso_total > 25)
 		return false;

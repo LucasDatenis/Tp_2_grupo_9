@@ -2,28 +2,31 @@
 
 #include <iostream>
 #include <string>
-#include "cPasajero.h"
+#include "Funciones.h"
 
 using namespace std;
 
+
 int main()
 {
-    Pasajero* pasajero1 = new Pasajero("Lucas", "Datenis", 44710445, 5);
-    Pasajero* pasajero2 = new Pasajero("Juan Manuel", "Rodriguez", 44711225, 9);
+    bool verificacion = true;
+
+    Pasajero* pasajero1 = new Pasajero("Lucas", "Datenis", 44710445, 5, 3);
+    Pasajero* pasajero2 = new Pasajero("Juan Manuel", "Rodriguez", 44711225, 4, 6);
 
     pasajero1->imprimir_pasajero();
     pasajero2->imprimir_pasajero();
 
-    bool verificacion = true;
-    
-    verificacion = pasajero1->agregarequipaje(16.4);
+
+
+    verificacion = bucle_equipaje(pasajero1);
     if (verificacion == false)
     {
-        cout << "EL peso de las valijas supera el total permitifo por persona" << endl;
-        verificacion = true;
+        cout << "EL peso de las valijas supera el total permitido por persona" << endl;
         exit(1);
     }
     
+
     pasajero1->imprimir_equipaje();
 
     delete pasajero1;
@@ -32,6 +35,3 @@ int main()
     system("pause");
     return 0;
 }
-
-
-

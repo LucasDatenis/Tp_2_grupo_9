@@ -143,6 +143,7 @@
     <ClCompile Include="cAvion.cpp" />
     <ClCompile Include="cPasajero.cpp" />
     <ClCompile Include="cVuelo.cpp" />
+    <ClCompile Include="Funciones.cpp" />
     <ClCompile Include="Tp_2.cpp" />
   </ItemGroup>
   <ItemGroup>
