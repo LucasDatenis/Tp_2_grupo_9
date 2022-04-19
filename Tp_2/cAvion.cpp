@@ -2,6 +2,7 @@
 
 Avion::Avion(string ID, float peso, int total_pasajeros, int cant_pasajeros, string estado)
 {
+	this->ID = ID;
 
 }
 
@@ -37,9 +38,7 @@ bool Avion::control_letras(string palabra)
 bool Avion::control_numeros_enteros(int numeros)
 {
 	string entero;
-	if (numeros < 0)
-		return false;
-	else if (numeros == 0)
+	if (numeros <= 0)
 		return false;
 	else
 	{
@@ -47,6 +46,25 @@ bool Avion::control_numeros_enteros(int numeros)
 		for (int i = 0; i < entero.length(); i++)
 		{
 			if (isdigit(entero[i]) == 0)
+				return false;
+		}
+		return true;
+	}
+}
+
+bool Avion::control_numeros_flotantes(float numero)
+{
+	string flotante;
+	if (numero <= 0)
+		return false;
+	else
+	{
+		flotante = to_string(numero);
+		for (int i = 0; i < flotante.length(); i++)
+		{
+			if (flotante[i] == '.')
+				i++;
+			else if (isdigit(flotante[i]) == 0)
 				return false;
 		}
 		return true;
