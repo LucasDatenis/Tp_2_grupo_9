@@ -50,7 +50,7 @@ Pasajero::Pasajero(string _nombre, string _apellido, long int dni, unsigned int 
 	//Si se recibe un false quiere decir que el DNI nop presenta en algun lugar un numero o es negativo
 	if (cont_num == false)
 	{
-		cout << "La cantridad de valijas del pasajero no es un numero" << endl;
+		cout << "La cantidad de valijas del pasajero no es un numero entero" << endl;
 		exit(1);
 	}
 	else
@@ -97,7 +97,7 @@ void Pasajero::imprimir_pasajero()
 
 void Pasajero::imprimir_equipaje()
 {
-	for (int i = 0; i < equipaje_total; i++)
+	for (int i = 0; i < equipaje_lista; i++)
 	{
 		cout << "Equipaje numero: " << i + 1 << endl << "Peso: " << equipaje[i] << endl;
 	}
